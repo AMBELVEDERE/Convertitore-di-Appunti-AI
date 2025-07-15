@@ -1,12 +1,16 @@
+// src/services/geminiService.ts
 
 import { GoogleGenAI, Type } from "@google/genai";
 import type { RewrittenNotes } from '../types';
 
-if (!process.env.API_KEY) {
-  throw new Error("API_KEY environment variable not set");
+// **CORREZIONE QUI:** Usa import.meta.env per le variabili d'ambiente di Vite.
+// E il nome della variabile d'ambiente deve iniziare con VITE_.
+if (!import.meta.env.VITE_GEMINI_API_KEY) {
+  throw new Error("VITE_GEMINI_API_KEY environment variable not set");
 }
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// **CORREZIONE QUI:** Passa la variabile d'ambiente corretta.
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY as string });
 
 const responseSchema = {
   type: Type.OBJECT,
