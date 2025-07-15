@@ -1,0 +1,16 @@
+/* src/index.css */
+
+/* Queste sono le direttive fondamentali di Tailwind CSS.
+   Vite e PostCSS le useranno per iniettare tutti gli stili di Tailwind. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Qui puoi aggiungere il tuo CSS personalizzato.
+   Ho spostato la definizione del font-family da index.html qui,
+   perché è la pratica migliore. */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Aggiungi altri stili globali qui sotto, se ne hai bisogno */
